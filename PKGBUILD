@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-settings-daemon-hybris
-pkgver=3.38.1
+pkgver=41.0
 pkgrel=1
 pkgdesc="GNOME Settings Daemon"
 url="https://github.com/droidian/gnome-settings-daemon"

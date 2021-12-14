@@ -15,7 +15,7 @@ checkdepends=(python-gobject python-dbusmock)
 optdepends=('usbguard: USB protection support')
 conflicts=('gnome-settings-daemon')
 provides=('gnome-settings-daemon')
-source=("gnome-settings-daemon-hybris::git+https://github.com/droidian/gnome-settings-daemon.git"
+source=("gnome-settings-daemon-hybris::git+https://github.com/droidian/gnome-settings-daemon.git#commit=829ddaf9c24ffe187084e4c845bc3d1f59a32623"
         "git+https://github.com/droidian/libgnome-volume-control.git")
 sha256sums=('SKIP'
             'SKIP')

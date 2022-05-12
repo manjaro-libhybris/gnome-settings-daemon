@@ -2,7 +2,7 @@
 
 pkgname=gnome-settings-daemon-hybris
 pkgver=41.0
-pkgrel=1
+pkgrel=2
 pkgdesc="GNOME Settings Daemon"
 url="https://github.com/droidian/gnome-settings-daemon"
 arch=(x86_64 aarch64)
@@ -15,7 +15,7 @@ checkdepends=(python-gobject python-dbusmock)
 optdepends=('usbguard: USB protection support')
 conflicts=('gnome-settings-daemon')
 provides=('gnome-settings-daemon')
-source=("gnome-settings-daemon-hybris::git+https://github.com/droidian/gnome-settings-daemon.git#commit=829ddaf9c24ffe187084e4c845bc3d1f59a32623"
+source=("gnome-settings-daemon-hybris::git+https://github.com/droidian/gnome-settings-daemon.git#commit=1c62d57c4fc4818480a40b95a2df13cf251df61b"
         "git+https://github.com/droidian/libgnome-volume-control.git")
 sha256sums=('SKIP'
             'SKIP')

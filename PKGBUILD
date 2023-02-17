@@ -1,7 +1,8 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Bardia Moshiri <fakeshell@bardia.tech>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-settings-daemon-hybris
-pkgver=41.0
+pkgver=43.0
 pkgrel=2
 pkgdesc="GNOME Settings Daemon"
 url="https://github.com/droidian/gnome-settings-daemon"
@@ -15,17 +16,15 @@ checkdepends=(python-gobject python-dbusmock)
 optdepends=('usbguard: USB protection support')
 conflicts=('gnome-settings-daemon')
 provides=('gnome-settings-daemon')
-source=("gnome-settings-daemon-hybris::git+https://github.com/droidian/gnome-settings-daemon.git#commit=1c62d57c4fc4818480a40b95a2df13cf251df61b"
+source=("gnome-settings-daemon-hybris::git+https://github.com/droidian/gnome-settings-daemon.git"
         "git+https://github.com/droidian/libgnome-volume-control.git")
 sha256sums=('SKIP'
             'SKIP')
 
 prepare() {
   cd $pkgbase
-
-  git submodule init
-  git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
-  git submodule update
+  git checkout -b bookworm
+  git checkout 696d87832a89fbef1ebb262634fe8c7b89ac4fdf
 }
 
 build() {
@@ -40,4 +39,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" meson install -C build
 }
-

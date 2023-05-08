@@ -3,7 +3,7 @@
 
 pkgname=gnome-settings-daemon-hybris
 pkgver=43.0
-pkgrel=2
+pkgrel=3
 pkgdesc="GNOME Settings Daemon"
 url="https://github.com/droidian/gnome-settings-daemon"
 arch=(x86_64 aarch64)
@@ -24,17 +24,13 @@ sha256sums=('SKIP'
 prepare() {
   cd $pkgbase
   git checkout -b bookworm
-  git checkout 696d87832a89fbef1ebb262634fe8c7b89ac4fdf
+  git checkout 9bf12fdc630aa68eddf9d38e3a1dd78c628bae87
 }
 
 build() {
   arch-meson $pkgbase build
   meson compile -C build
 }
-
-#check() {
-#  meson test -C build --print-errorlogs
-#}
 
 package() {
   DESTDIR="$pkgdir" meson install -C build
